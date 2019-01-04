@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaLM.NetCoreT01.App", "XiaLM.NetCoreT01.App\XiaLM.NetCoreT01.App.csproj", "{F4C64B2C-6B27-434E-87EA-827512B00D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiaLM.NetCoreT01.Utility", "XiaLM.NetCoreT01.Utility\XiaLM.NetCoreT01.Utility.csproj", "{7FBBB269-26C8-424F-ADD2-AC7C91F4950B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4C64B2C-6B27-434E-87EA-827512B00D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C64B2C-6B27-434E-87EA-827512B00D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C64B2C-6B27-434E-87EA-827512B00D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C64B2C-6B27-434E-87EA-827512B00D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBBB269-26C8-424F-ADD2-AC7C91F4950B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBBB269-26C8-424F-ADD2-AC7C91F4950B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBBB269-26C8-424F-ADD2-AC7C91F4950B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBBB269-26C8-424F-ADD2-AC7C91F4950B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1984FF8C-0985-4E09-B82F-AFAFF9518EC1}
+	EndGlobalSection
+EndGlobal

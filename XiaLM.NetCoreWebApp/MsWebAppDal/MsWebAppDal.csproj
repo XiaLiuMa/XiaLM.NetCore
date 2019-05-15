@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Comm\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Base.Common\Base.Common.csproj" />
+  </ItemGroup>
+
+</Project>

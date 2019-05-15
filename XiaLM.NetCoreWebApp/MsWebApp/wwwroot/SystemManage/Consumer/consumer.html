@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>消费者配置界面</title>
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/layui.css">
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/globle.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="handle">
+            <img id="add" src="../../../wwwroot/comm//img/add.png" alt="" />
+            <img id="delete" src="../../../wwwroot/comm//img/delete.png" alt="" />
+            <img id="update" src="../../../wwwroot/comm//img/alert.png" alt="" />
+            <input type="text" class="select-input" name="ip" placeholder="请输入ip号">
+            <img id="select" src="../../../wwwroot/comm//img/select.png" alt="" />
+        </div>
+        <!--以下为两个必须div元素-->
+        <div id="table" class="table-div"></div>
+        <div id="pageBar" class="txtRight"></div>
+    </div>
+
+    <div class="peizhi">
+        <div class="pz-header">
+            <span class="pz-title">ftp配置</span>
+            <button type="button" class="close"><span style="color: #0C4EF7;">&times;</span></button>
+        </div>
+        <div class="pz-content">
+            <!-- <div class="flexDiv"><span>数据库名称：</span><input type="text"></div> -->
+            <div class="flexDiv"><span>服务器IP：</span><input type="text" name="svip"></div>
+            <div class="flexDiv"><span>服务器端口：</span><input type="text" name="svport"></div>
+            <div class="flexDiv"><span>用户名：</span><input type="text" name="sname"></div>
+            <div class="flexDiv"><span>密码：</span><input type="text" name="spwd"></div>
+        </div>
+        <div class="pz-footer">
+            <button type="button" class="btn btn-primary" id="confirm">确认</button>
+            <button type="button" class="btn btn-default btn-danger" id="cancel">取消</button>
+        </div>
+    </div>
+    <script src="../../../wwwroot/comm/js/jquery-2.0.3.min.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap.min.js"></script>
+    <script src="../../../wwwroot/comm/js/layui.js"></script>
+    <script src="../../../wwwroot/comm/js/mypage.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/mygloble.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/myutil.js"></script>
+    <script type="text/javascript" src="consumer.js"></script>
+    <script>
+// var json = JSON.parse(localStorage.getItem("dbArr"));
+// console.log(json);
+// 	var nameList = ['','序号',, '服务器地址', '服务器端口','用户名','密码'] //table的列名
+//   var widthList = [10,10, 100, 100,100,100,100] //table每列的宽度
+//   $(function () {
+// 		mypage.setCfg({
+// 			table: 'table',
+// 			bar: 'pageBar',
+// 			limit: 2,
+// 			color: '#1E9FFF',
+// 			layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+//     });
+
+//     $("#add").on("click",function(){
+//       $(".peizhi").css("display","block");
+//     })
+//     $(".close").on("click",function(){
+//       $(".peizhi").css("display","none");
+//     })
+//     $("#confirm").on("click",function(){
+//       $(".peizhi").css("display","none");
+//     })
+//     $("#cancel").on("click",function(){
+//       $(".peizhi").css("display","none");
+//     })
+
+//   }); //初始化完成
+
+    </script>
+</body>
+</html>

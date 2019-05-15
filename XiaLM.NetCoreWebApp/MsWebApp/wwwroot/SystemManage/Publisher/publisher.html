@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MsWebApp系统界面</title>
+    <!-- <link rel="stylesheet" href="../../../wwwroot/comm/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/layui.css" />
+    <link rel="stylesheet" href="../../../wwwroot/comm//css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/globle.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="handle">
+            <img id="add" src="../../../wwwroot/comm//img/add.png" alt="" />
+            <img id="delete" src="../../../wwwroot/comm//img/delete.png" alt="" />
+            <img id="update" src="../../../wwwroot/comm//img/alert.png" alt="" />
+            <input type="text" class="select-input" name="ip" placeholder="请输入交换机标识">
+            <img id="select" src="../../../wwwroot/comm//img/select.png" alt="" />
+        </div>
+        <!--以下为两个必须div元素-->
+        <div id="table" class="table-div"></div>
+        <div id="pageBar" class="txtRight"></div>
+    </div>
+    <div class="peizhi">
+        <div class="pz-header">
+            <span class="pz-title">发布者配置</span>
+            <button type="button" class="close"><span style="color: #0C4EF7;">&times;</span></button>
+        </div>
+        <div class="pz-content">
+            <div class="flexDiv"><span>交换机名:</span><input type="text" name="svip"></div>
+            <div class="flexDiv"><span>交换机标识:</span><input type="text" name="svport"></div>
+            <div class="flexDiv">
+                <span>交换机类型:</span>
+                <select class="pz-select" id="typeSelect"></select>
+            </div>
+            <div class="flexDiv checkbox-div">
+                <input type="checkbox" name="ljcheck" id=""> 
+                <span>是否为默认</span>
+            </div> 
+        </div>
+        <div class="pz-footer">
+            <button type="button" class="btn btn-primary" id="confirm">确认</button>
+            <button type="button" class="btn btn-default btn-danger" id="cancel">取消</button>
+        </div>
+    </div>
+
+    <script src="../../../wwwroot/comm/js/jquery-2.0.3.min.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap.min.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap-datepicker.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../wwwroot/comm/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/mygloble.js"></script>
+    <script type="text/javascript" src="publisher.js"></script>
+</body>
+</html>

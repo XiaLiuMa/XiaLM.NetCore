@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>MsWebApp</AssemblyName>
+    <RootNamespace>MsWebApp</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\build\output\MsDuan\MsWebApp\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CustomAttribute\**" />
+    <EmbeddedResource Remove="CustomAttribute\**" />
+    <None Remove="CustomAttribute\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.110" />
+    <PackageReference Include="System.IO.Ports" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MsWebAppDal\MsWebAppDal.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WebApi\SystemConfig\" />
+    <Folder Include="WebApi\DeviceManage\" />
+    <Folder Include="wwwroot\DeviceManage\" />
+    <Folder Include="wwwroot\SystemConfig\BaseConfig\" />
+    <Folder Include="wwwroot\SystemManage\RabbitMq\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy  $(ProjectDir)db   $(OutDir)db /e /i /y /f&#xD;&#xA;xcopy  $(ProjectDir)config   $(OutDir)config /e /i /y /f&#xD;&#xA;xcopy  $(ProjectDir)wwwroot   $(OutDir)wwwroot /e /i /y /f" />
+  </Target>
+
+</Project>

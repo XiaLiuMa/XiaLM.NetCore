@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>数据库备份系统界面</title>
+    <!-- <link rel="stylesheet" href="../wwwroot/comm/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="../wwwroot/comm/css/bootstrap.css">
+    <link rel="stylesheet" href="../wwwroot/comm/css/layui.css" />
+    <link
+      rel="stylesheet"
+      href="../wwwroot/comm//css/bootstrap-datetimepicker.min.css"
+    />
+    <link rel="stylesheet" href="../wwwroot/comm/css/globle.css" />
+    <style></style>
+  </head>
+  <body>
+    <header class="index-header">
+      <div class="header-img"></div>
+      <!-- <img class="header-img" src="./comm/img/logo.png" alt="" /> -->
+      <div class="header-title">数据备份系统</div>
+      <ul class="header-ul">
+        <li>
+          <a class="header-list " href="../wwwroot/index.html">
+            <img src="../wwwroot/comm/img/list1.png" alt="" />
+            <div>数据库</div>
+          </a>
+        </li>
+        <li>
+          <a class="header-list " href="../wwwroot/ftp.html">
+            <img src="../wwwroot/comm/img/list2.png" alt="" />
+            <div>FTP服务器</div>
+          </a>
+        </li>
+        <li>
+          <a class="header-list " href="./renwu.html">
+            <img src="../wwwroot/comm/img/list3.png" alt="" />
+            <div>任务调度</div>
+          </a>
+        </li>
+        <li>
+          <a class="header-list list-current" href="../wwwroot/beifen.html">
+            <img src="../wwwroot/comm/img/list4.png" alt="" />
+            <div>手动备份</div>
+          </a>
+        </li>
+      </ul>
+      <!-- <div class="user">
+        <img src="../wwwroot/comm/img/touxiang.png" alt="" />
+        <div class="user-name">admin123</div>
+      </div> -->
+      <div class="logout">
+        <img src="../wwwroot/comm/img/logout.png" alt="" />
+        <div class="logout-title">注销</div>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="time-div">
+        <span>选择配置时间段：</span>
+        <input
+          type="datetime"
+          value=""
+          name="start_time"
+          id="start_time_picker"
+          class="datetimepicker"
+          readonly
+        />
+        <!-- <input type="datetime" value="{{ start_time }}" name="start_time" id="start_time_picker" class="datetimepicker" readonly> -->
+        <span>至</span>
+        <input
+          type="datetime"
+          value=""
+          name="end_time"
+          id="end_time_picker"
+          class="datetimepicker"
+          readonly
+        />
+        <button type="button" class="btn btn-primary" id="confirm">确认</button>
+      </div>
+    </div>
+
+    <script src="../wwwroot/comm/js/jquery-2.0.3.min.js"></script>
+    <script src="../wwwroot/comm/js/bootstrap.min.js"></script>
+    <script  type="text/javascript" src="../wwwroot/comm/js/mygloble.js"></script>
+    <script src="../wwwroot/comm/js/bootstrap-datepicker.js"></script>
+    <script src="../wwwroot/comm/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../wwwroot/comm/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../wwwroot/comm/js/beifen.js"></script>
+    <script>
+      $(".datetimepicker").datetimepicker({
+        // startDate: new Date(),
+        format: "yyyy-mm-dd hh:ii:ss",
+        autoclose: true,
+        minView: 0,
+        minuteStep: 1,
+        language: "zh-CN",
+        initialDate: new Date(), //初始化当前日期
+        todayBtn: true
+      });
+
+      $("#lj_startdate").datetimepicker({
+          format: "yyyy-mm-dd hh:ii:ss",
+          autoclose: true,
+          minView: 0,
+          language: "zh-CN",
+          minuteStep: 1
+        }).on("changeDate", function(ev) {
+          var starttime = $("#lj_startdate").val();
+          $("#lj_enddate").datetimepicker("setStartDate", starttime);
+          $("#lj_startdate").datetimepicker("hide");
+        });
+      $("#lj_enddate").datetimepicker({
+          format: "yyyy-mm-dd hh:ii:ss",
+          autoclose: true,
+          minView: 0,
+          language: "zh-CN",
+          minuteStep: 1
+        }).on("changeDate", function(ev) {
+          var starttime = $("#lj_startdate").val();
+          var endtime = $("#lj_enddate").val();
+          $("#lj_startdate").datetimepicker("setEndDate", endtime);
+          $("#lj_enddate").datetimepicker("hide");
+        });
+
+      // 提交按钮点击
+      $("#confirm").on("click", function() {
+        var start_time = $("input[name='start_time']").val();
+        var end_time = $("input[name='end_time']").val();
+        if (start_time == "" || end_time == "") {
+          alert("请输入完整时间段!");
+        } else {
+          var startTime = palindrome(start_time);
+          var endTime = palindrome(end_time);
+          $.ajax({
+            url: "http://"+params+"/backup/BackupData",
+            type: "post",
+            data: {
+              StartTime: startTime,
+              EndTime: endTime
+            },
+            success: function(res) {
+              if (res) {
+                if(res=="nologin"){
+                     window.location.href = "login.html"
+             }else{
+                
+              }
+              }
+            }
+          });
+        }
+      });
+
+
+       // 退出登录操作
+$(".logout").on("click",function(){
+    $.ajax({
+        url:"http://192.168.110.56:9000/login/OutLogin",
+        type:"post",
+        data:{},
+        success:function(res){
+            if(res==true){
+                window.location.href="login.html";
+            }
+        }
+    })
+})
+      function palindrome(str) {
+        // 先后去除空格和非数字字母的字符
+        var newStr = str
+          .replace(/\s/g, "")
+          .replace(/[^a-zA-Z0-9]/g, "")
+          .toLowerCase();
+        return newStr;
+      }
+    </script>
+  </body>
+</html>

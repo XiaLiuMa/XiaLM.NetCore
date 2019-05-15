@@ -1,0 +1,7 @@
+.layui-table tr > td:nth-last-of-type(1) {
+    display: none;
+}
+.layui-table tr > td:nth-last-of-type(2) {
+    display: none;
+}
+

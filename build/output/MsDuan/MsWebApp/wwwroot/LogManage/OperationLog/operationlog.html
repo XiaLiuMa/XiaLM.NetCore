@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>操作日志界面</title>
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/layui.css">
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/globle.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="handle">
+            <img id="exportpage" src="../../../wwwroot/comm/img/exportpage.png" alt="" />
+            <img id="exportall" src="../../../wwwroot/comm/img/exportall.png" alt="" />
+            <img id="delete" src="../../../wwwroot/comm/img/delete.png" alt="" />
+            <img id="clear" src="../../../wwwroot/comm/img/clear.png" alt="" />
+            <span>查询时间段:</span>
+            <input class="datetimepicker" type="datetime" id="start_time_picker" name="start_time" value="" readonly />
+            <span>至</span>
+            <input class="datetimepicker" type="datetime" id="end_time_picker" name="end_time" value="" readonly />
+            <span>操作类型:</span>
+            <select class="pz-select" id="typeSelect"></select>
+            <img id="select" src="../../../wwwroot/comm/img/select.png" alt="" />
+        </div>
+        <!--以下为两个必须div元素-->
+        <div id="table" class="table-div"></div>
+        <div id="pageBar" class="txtRight"></div>
+    </div>
+
+    <script src="../../../wwwroot/comm/js/jquery-2.0.3.min.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap.min.js"></script>
+    <script src="../../../wwwroot/comm/js/layui.js"></script>
+    <script src="../../../wwwroot/comm/js/mypage.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/mygloble.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/myutil.js"></script>
+    <script type="text/javascript" src="operationlog.js"></script>
+</body>
+</html>

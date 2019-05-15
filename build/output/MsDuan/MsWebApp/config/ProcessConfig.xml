@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProcessConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProcessConfig>
+    <Name>Ms.IsolatorService</Name>
+    <WindowsPath>\Ms.IsolatorService\Ms.IsolatorService.exe</WindowsPath>
+    <LinuxPath>\Ms.IsolatorService\Ms.IsolatorService</LinuxPath>
+    <Describe>Isolator服务</Describe>
+    <LogTable>IsolatorService</LogTable>
+  </ProcessConfig>
+  <ProcessConfig>
+    <Name>Ms.DataEngineService</Name>
+    <WindowsPath>\Ms.DataEngineService\Ms.DataEngineService.exe</WindowsPath>
+    <LinuxPath>\Ms.DataEngineService\Ms.DataEngineService</LinuxPath>
+    <Describe>DataEngine服务</Describe>
+    <LogTable>DataEngineService</LogTable>
+  </ProcessConfig>
+</ArrayOfProcessConfig>

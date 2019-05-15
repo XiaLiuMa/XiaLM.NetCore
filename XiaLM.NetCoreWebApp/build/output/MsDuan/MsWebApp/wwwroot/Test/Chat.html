@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MsWebApp首页</title>
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/layui.css">
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/globle.css" />
+</head>
+<body>
+    <div class="row">
+        <p></p>
+        <div class="col-md-12">
+            <form action="#">
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td colspan="2">
+                            <input type="text" id="user" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Message</td>
+                        <td colspan="2">
+                            <input type="text" id="message" />
+                        </td>
+                        <td>
+                            <input type="submit" id="send" value="Send" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <p></p>
+            <ul id="messages" style="list-style-type: none;"></ul>
+        </div>
+    </div>
+    <script src="~/lib/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="../../../wwwroot/comm/js/jquery-2.0.3.min.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap.min.js"></script>
+    <script src="../../../wwwroot/comm/js/template-native.js"></script>
+    <script src="../../../wwwroot/comm/js/layui.js"></script>
+    <script src="../../../wwwroot/comm/js/mypage.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/mygloble.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/myutil.js"></script>
+    <script type="text/javascript" src="Chat.js"></script>
+</body>
+</html>

@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Comm\" />
+    <Compile Remove="Comm\**" />
+    <EmbeddedResource Remove="Comm\**" />
+    <None Remove="Comm\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Base.Common\Base.Common.csproj" />
+    <ProjectReference Include="..\..\01Util\Base.Common\Base.Common.csproj" />
   </ItemGroup>
 
 </Project>

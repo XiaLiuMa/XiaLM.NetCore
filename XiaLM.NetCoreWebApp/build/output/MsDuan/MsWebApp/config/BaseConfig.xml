@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BaseConfig>
+  <HostIp>127.0.0.1</HostIp>
+  <HostPort>50232</HostPort>
+  <SqliteDb>\MsWebApp\db\MsIsolator.db</SqliteDb>
+  <LogDb>\MsWebApp\db\MsIsolatorLog.db</LogDb>
+  <RunLogDays>10</RunLogDays>
+</BaseConfig>

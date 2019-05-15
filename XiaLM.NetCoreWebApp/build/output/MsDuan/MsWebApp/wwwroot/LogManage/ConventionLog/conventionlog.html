@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>常规日志界面</title>
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/layui.css">
+    <link rel="stylesheet" href="../../../wwwroot/comm/css/globle.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="handle">
+            <span>选择服务:</span>
+            <select class="pz-select" id="serviceSelect" name="sService"></select>
+            <span>选择日志级别:</span>
+            <select class="pz-select" id="serviceLevel" name="sLevel"></select>
+            <span>查询时间段:</span>
+            <input type="datetime" class="datetimepicker" id="sTime" name="sTime" value="" placeholder="1999-01-01 12:12:12" />
+            <span>至</span>
+            <input type="datetime" class="datetimepicker" id="eTime" name="eTime" value="" placeholder="1999-01-01 12:12:12" />
+            <img id="select" src="../../../wwwroot/comm/img/select.png" alt="" />
+            <img id="delete" src="../../../wwwroot/comm/img/delete.png" alt="" />
+            <img id="clear" src="../../../wwwroot/comm/img/clear.png" alt="" />
+            <img id="exportpage" src="../../../wwwroot/comm/img/exportpage.png" alt="" />
+            <img id="exportall" src="../../../wwwroot/comm/img/exportall.png" alt="" />
+
+        </div>
+        <!--以下为两个必须div元素-->
+        <div id="table" class="table-div"></div>
+        <div id="pageBar" class="txtRight"></div>
+    </div>
+
+    <script src="../../../wwwroot/comm/js/jquery-2.0.3.min.js"></script>
+    <script src="../../../wwwroot/comm/js/bootstrap.min.js"></script>
+    <script src="../../../wwwroot/comm/js/layui.js"></script>
+    <script src="../../../wwwroot/comm/js/mypage.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/mygloble.js"></script>
+    <script type="text/javascript" src="../../../wwwroot/comm/js/myutil.js"></script>
+    <script type="text/javascript" src="conventionlog.js"></script>
+</body>
+</html>
